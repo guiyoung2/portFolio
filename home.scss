@@ -1,0 +1,167 @@
+@font-face {
+  font-family: "GangwonEdu_OTFBoldA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "GangwonEdu_OTFBoldA";
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+img {
+  display: block;
+}
+.container {
+  @keyframes sun {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .sun {
+    width: 23%;
+    height: 23%;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    background: url("./main/images/sun.png") no-repeat center center;
+    background-size: contain;
+    animation-name: sun;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+  }
+  .water_box {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 75%;
+    top: 50%;
+    transform: translate(-75%, -50%);
+    .water {
+      // position: absolute;
+      position: relative;
+      // top: 0;
+      // right: 0;
+      margin-left: auto;
+      width: 80%;
+      height: auto;
+      display: block;
+      transition: all 0.2s;
+      // width: 100%;
+      // height: auto;
+      // width: 100%;
+      // display: block;
+      height: 100%;
+      // height: 50px;
+      background: url("./main/images/water.png") no-repeat;
+      background-size: contain;
+    }
+    .water_move {
+      animation-name: water;
+      animation-iteration-count: 1;
+      animation-timing-function: ease-in-out;
+      animation-duration: 1s;
+    }
+    @keyframes water {
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(-20deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    .water_txt {
+      position: absolute;
+      top: 20px;
+      // bottom: 0;
+      margin-left: auto;
+      transform: translateX(-20%);
+      right: 20%;
+      font-size: 26px;
+      animation-name: txt_event;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-duration: 1s;
+    }
+
+    @keyframes txt_event {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.95);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
+  .flower_box {
+    position: absolute;
+    width: 30%;
+    height: 30%;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -55%);
+    background: url("./main/images/flower1.png") no-repeat center center;
+    background-size: contain;
+    transition: all 1.5s;
+  }
+  .txt_box {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    text-align: center;
+    transition: all 0.5s;
+    opacity: 0;
+    // display: none;
+    .about_me {
+      display: block;
+      width: 150px;
+      height: 40px;
+      line-height: 40px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      margin: 20px auto 0;
+    }
+  }
+  .about_block {
+    opacity: 1;
+  }
+}
+.txt_br {
+  display: block;
+}
+@media screen and (max-width: 660px) {
+  .txt_box {
+    font-size: 12px;
+  }
+  .txt_br {
+    display: inline;
+  }
+  .water_txt {
+    font-size: 20px !important;
+    right: -40px !important;
+  }
+}
