@@ -2,7 +2,7 @@ $(function () {
   let water_box = $(".water_box");
   let water = $(".water");
   let flower = $(".flower_box");
-  let num = 1;
+  let num = 5;
   let water_txt = $(".water_txt");
   let about_txt = $(".txt_box");
 
